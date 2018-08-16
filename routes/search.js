@@ -4,7 +4,7 @@ var superagent = require('superagent')
 var cheerio = require('cheerio')
 
 router.get('/', (req, res, next) => {
-  superagent.get(encodeURI(`https://www.fastsoso.cn/search/${req.query.page}?k=${req.query.keyword}`)).end((err, data) => {
+  superagent.get(encodeURI(`https://www.fastsoso.cn/search/${req.query.page}?k=${req.query.keyword}&t=${req.query.tab}`)).end((err, data) => {
     if (err) return next(err)
     let $ = cheerio.load(data.text)
     let items = []
