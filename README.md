@@ -1,9 +1,6 @@
-# Koa2 Lenconda Template
+# Intruders Back-end Documentation
 
-A simple Express-liked Koa2 Template.
-Authored by [Lenconda](https://github.com/lenconda)
-
-# Install
+# Install & Run
 
 Clone the project and cd to its root directory.
 
