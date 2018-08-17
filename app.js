@@ -1,4 +1,3 @@
-// var createError = require('http-errors')
 var express = require('express')
 var path = require('path')
 var cookieParser = require('cookie-parser')
@@ -37,7 +36,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500)
-  res.render('error')
+  res.send({ status: 0, message: err.message })
 })
 
 module.exports = app
