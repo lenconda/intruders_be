@@ -1,0 +1,17 @@
+version: '2'
+services: 
+  be: 
+    build: .
+    ports: 
+      - "3000:3000"
+    restart: always
+  nginx:
+    image: nginx:latest
+    depends_on:
+      - be
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./data/logs:/var/logs
+    ports:
+      - "1567:80"
+    restart: always
