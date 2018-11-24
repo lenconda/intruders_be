@@ -1,0 +1,42 @@
+{
+  "name": "intruders",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "start": "export NODE_ENV=development; ts-node app.ts",
+    "prod": "pm2 start \"npm start\"",
+    "build": "npm run lint && tsc",
+    "clean": "npm run clean:build",
+    "clean:build": "rm -rf dist",
+    "test": "echo: \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">= 7.6"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.2",
+    "@types/chai-http": "^3.0.4",
+    "@types/kcors": "^2.2.2",
+    "@types/koa": "^2.0.43",
+    "@types/koa-bodyparser": "^4.2.0",
+    "@types/koa-logger": "^3.1.0",
+    "@types/koa-router": "^7.0.27",
+    "@types/mocha": "^2.2.48",
+    "@types/mongoose": "^5.0.1",
+    "@types/node": "^9.4.0",
+    "ts-node": "^4.1.0",
+    "typescript": "^2.7.1"
+  },
+  "dependencies": {
+    "kcors": "^2.2.1",
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-custom-response": "^0.2.2",
+    "koa-logger": "^3.1.0",
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.0.3",
+    "reflect-metadata": "^0.1.12",
+    "routing-controllers": "^0.7.7"
+  }
+}
