@@ -1,6 +1,6 @@
 import { JsonController, Get, QueryParam } from 'routing-controllers'
 import HotspotService from '../services/hotspot'
-import { Inject, Service } from 'typedi'
+import { Inject } from 'typedi'
 
 @JsonController('/hotspot')
 export default class HotspotController {

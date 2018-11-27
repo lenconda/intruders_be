@@ -5,11 +5,11 @@
   "scripts": {
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "start": "export NODE_ENV=development; ts-node app.ts",
-    "prod": "pm2 start \"npm start\"",
     "build": "npm run lint && tsc",
     "clean": "npm run clean:build",
     "clean:build": "rm -rf dist",
-    "test": "echo: \"Error: no test specified\" && exit 1"
+    "test": "echo: \"Error: no test specified\" && exit 1",
+    "debug": "ndb ."
   },
   "engines": {
     "node": ">= 7.6"
@@ -27,6 +27,7 @@
     "@types/mongoose": "^5.0.1",
     "@types/node": "^9.6.39",
     "@types/superagent": "^3.8.4",
+    "ndb": "^1.0.33",
     "ts-node": "^4.1.0",
     "typescript": "^2.7.1"
   },
