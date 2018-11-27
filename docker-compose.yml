@@ -1,0 +1,9 @@
+version: "2"
+services:
+  be:
+    build: .
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3000:3000"
+    restart: always
