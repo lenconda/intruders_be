@@ -30,7 +30,7 @@ let port: number = process.env.PORT ? parseInt(process.env.PORT) : 3000
 
 useContainer(Container)
 useKoaServer(app, {
-  routePrefix: '/intruders',
+  routePrefix: '',
   controllers: [__dirname + '/controllers/*.{ts,js}'],
   middlewares: [__dirname + '/middlewares/*.{ts,js}'],
   defaults: {
