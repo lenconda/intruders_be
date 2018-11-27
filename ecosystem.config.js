@@ -1,7 +1,7 @@
 module.exports = {
   apps: [{
     name: 'Intruders',
-    script: 'app/app.ts',
+    script: 'node_modules/.bin/ts-node app/app.ts',
     env: {
       NODE_ENV: 'development'
     },
