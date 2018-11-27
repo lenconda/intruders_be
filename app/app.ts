@@ -5,7 +5,7 @@ import bodyParser from 'koa-bodyparser'
 import logger from 'koa-logger'
 import { useKoaServer, useContainer } from 'routing-controllers'
 import { Container } from 'typedi'
-import config from './config'
+import config from '../config'
 
 const app = new Koa()
 
@@ -31,8 +31,8 @@ let port: number = process.env.PORT ? parseInt(process.env.PORT) : 3000
 useContainer(Container)
 useKoaServer(app, {
   routePrefix: '/intruders',
-  controllers: [__dirname + '/app/controllers/*.{ts,js}'],
-  middlewares: [__dirname + '/app/middlewares/*.{ts,js}'],
+  controllers: [__dirname + '/controllers/*.{ts,js}'],
+  middlewares: [__dirname + '/middlewares/*.{ts,js}'],
   defaults: {
     paramOptions: { required: true }
   },

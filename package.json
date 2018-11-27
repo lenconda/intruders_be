@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "start": "export NODE_ENV=development; ts-node app.ts",
+    "start": "export NODE_ENV=development; ts-node app/app.ts",
     "build": "npm run lint && tsc",
     "clean": "npm run clean:build",
     "clean:build": "rm -rf dist",

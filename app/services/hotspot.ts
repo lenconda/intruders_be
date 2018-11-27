@@ -8,7 +8,6 @@ export default class HotspotService {
 
   async getCategories () {
     let response = await superagent.get('https://www.fastsoso.cn')
-    console.log(response.text)
     let $ = cheerio.load(response.text)
     let items = []
     let lis = $('ul.nav.nav-tabs > li')
