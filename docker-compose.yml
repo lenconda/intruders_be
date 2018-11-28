@@ -1,9 +1,18 @@
-version: "2"
+version: "1"
 services:
-  be:
+  intruders:
     build: .
     environment:
       - NODE_ENV=production
     ports:
       - "3000:3000"
     restart: always
+  nginx:
+    image: nginx:last
+    depends_on:
+      - intruders
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    restart: always
+    ports:
+      - "1567:80"
