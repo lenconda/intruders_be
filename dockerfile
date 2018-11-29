@@ -1,6 +1,7 @@
-FROM lenconda/lenconda-pm2:latest
+FROM node:8.14.0
 COPY app /intruders/app
-COPY *.json /intruders/
+COPY tsconfig.json package.json /intruders/
+COPY config.ts
 WORKDIR /intruders
 RUN npm i
-CMD ["pm2-docker", "start", "--interpreter", "/intruders/node_modules/.bin/ts-node", "./app/app.ts"]
+CMD ["/intruders/node_modules/.bin/pm2-docker", "start", "--interpreter", "/intruders/node_modules/.bin/ts-node", "./app/app.ts"]
