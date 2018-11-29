@@ -11,7 +11,7 @@ services:
     container_name: nginx_intruders_be
     image: nginx:latest
     depends_on:
-      - be
+      - intruders
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
