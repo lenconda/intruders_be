@@ -1,18 +1,22 @@
-version: "2"
+version: '2'
 services:
   intruders:
+    container_name: intruders_be
     build: .
     environment:
       - NODE_ENV=production
+      - ENABLE_NODE_LOG=YES
     ports:
       - "3000:3000"
     restart: always
   nginx:
-    image: nginx
+    container_name: nginx_intruders_be
+    image: nginx:latest
     depends_on:
-      - intruders
+      - be
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-    restart: always
+      - ./data/logs:/var/logs
     ports:
       - "1567:80"
+    restart: always
